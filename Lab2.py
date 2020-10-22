@@ -137,7 +137,7 @@ def styleTransfer(cData, sData, tData):
 
     gradient = K.gradients(loss, genTensor)
     outputs = [loss]
-    outputs.append(gradient)
+    outputs += gradient
     kFunction = K.function([genTensor], outputs)
 
     class Wrapper:
